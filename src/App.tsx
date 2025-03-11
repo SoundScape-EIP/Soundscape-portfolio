@@ -1,9 +1,13 @@
 import './App.css'
-// import Navbar from './components/Navbar/Navbar'
+import Navbar from './components/Navbar/Navbar'
+import { HomeSection, EventsSection, ShopSection, ContactSection } from './components/Sections'
+import './styles/ScrollSnap.css'
+
 
 function App() {
   return (
     <main>
+      <Navbar />
       <section className="hero">
         <div className="hero-content">
           <div className="content-wrapper">
@@ -17,6 +21,13 @@ function App() {
             <button className="cta-button">Join the waitlist</button>
           </div>
         </div>
+      </section>
+
+      <section className="scroll-container">
+        <HomeSection />
+        <EventsSection />
+        <ShopSection />
+        <ContactSection />
       </section>
 
       {/* <section className="hero-grid">

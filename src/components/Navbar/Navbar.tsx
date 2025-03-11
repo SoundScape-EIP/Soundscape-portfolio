@@ -1,64 +1,74 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
-const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+const Navbar: React.FC = () => {
+  const [activeSection, setActiveSection] = useState('home');
 
-    // Handle scroll effect
-    useEffect(() => {
-        const handleScroll = () => {
-            const offset = window.scrollY;
-            if (offset > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('.section');
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+      sections.forEach((section) => {
+        const sectionTop = (section as HTMLElement).offsetTop;
+        const sectionHeight = (section as HTMLElement).offsetHeight;
+        const sectionId = section.getAttribute('id') || '';
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-
-    // Close menu when clicking a link (mobile)
-    const handleLinkClick = () => {
-        if (window.innerWidth < 768) {
-            setIsMenuOpen(false);
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          setActiveSection(sectionId);
         }
+      });
     };
 
-    return (
-        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-            <div className="nav-brand">Soundscape</div>
-            <button 
-                className={`nav-toggle ${isMenuOpen ? 'active' : ''}`} 
-                aria-label="toggle navigation"
-                onClick={toggleMenu}
-            >
-                <span className="hamburger"></span>
-            </button>
-            <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-                <li className="nav-item">
-                    <a href="#home" className="nav-link" onClick={handleLinkClick}>Home</a>
-                </li>
-                <li className="nav-item">
-                    <a href="#about" className="nav-link" onClick={handleLinkClick}>About</a>
-                </li>
-                <li className="nav-item">
-                    <a href="#projects" className="nav-link" onClick={handleLinkClick}>Projects</a>
-                </li>
-                <li className="nav-item">
-                    <a href="#contact" className="nav-link" onClick={handleLinkClick}>Contact</a>
-                </li>
-            </ul>
-        </nav>
-    );
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+    }
+  };
+
+  return (
+    <nav className="navbar">
+      <div className="nav-links">
+        <a 
+          href="#home" 
+          className={activeSection === 'home' ? 'active' : ''}
+          onClick={(e) => handleNavClick(e, 'home')}
+        >
+          Home
+        </a>
+        <a 
+          href="#events" 
+          className={activeSection === 'events' ? 'active' : ''}
+          onClick={(e) => handleNavClick(e, 'events')}
+        >
+          Events
+        </a>
+        <a 
+          href="#shop" 
+          className={activeSection === 'shop' ? 'active' : ''}
+          onClick={(e) => handleNavClick(e, 'shop')}
+        >
+          Shop
+        </a>
+        <a 
+          href="#contact" 
+          className={activeSection === 'contact' ? 'active' : ''}
+          onClick={(e) => handleNavClick(e, 'contact')}
+        >
+          Contact
+        </a>
+      </div>
+    </nav>
+  );
 };
 
-export default Navbar; 
+export default Navbar;

@@ -1,0 +1,35 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* #home {
+  background-color: #000000;
+} */
+
+#events {
+  background-color: #121212;
+}
+
+#shop {
+  background-color: #1a1a1a;
+}
+
+#contact {
+  background-color: #212121;
+}
