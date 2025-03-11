@@ -8,6 +8,32 @@ const Navbar: React.FC = () => {
   const indicatorRef = useRef<HTMLDivElement>(null);
   const navLinksRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section');
+      let current = '';
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - 60) {
+          current = section.getAttribute('id');
+        }
+      });
+      if (current) {
+        setActiveSection(current);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Call once to set initial active section
+    handleScroll();
+    // Clean up
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   // Add effect for the underline animation
   useEffect(() => {
@@ -79,7 +105,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu Button */}
-      <button 
+      <button
         className={`hamburger-btn ${isMenuOpen ? 'active' : ''}`}
         aria-label="Menu"
         aria-expanded={isMenuOpen}

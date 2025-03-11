@@ -8,12 +8,10 @@ function App() {
   return (
     <main>
       <Navbar />
-      <section className="scroll-container">
-        <HomeSection />
-        <EventsSection />
-        <ShopSection />
-        <ContactSection />
-      </section>
+      <HomeSection />
+      <EventsSection />
+      <ShopSection />
+      <ContactSection />
     </main>
   )
 }
