@@ -1,10 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Navbar.css';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-// Register the ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
 
 const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
