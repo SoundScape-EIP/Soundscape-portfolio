@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Navbar.css';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Register the ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const indicatorRef = useRef<HTMLDivElement>(null);
+  const navLinksRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +47,25 @@ const Navbar: React.FC = () => {
     };
   }, [isMenuOpen]);
 
+  // Add effect for the underline animation
+  useEffect(() => {
+    if (indicatorRef.current && navLinksRef.current) {
+      const activeLink = navLinksRef.current.querySelector(`.nav-links a[href="#${activeSection}"]`);
+
+      if (activeLink) {
+        const linkRect = activeLink.getBoundingClientRect();
+        const navRect = navLinksRef.current.getBoundingClientRect();
+
+        gsap.to(indicatorRef.current, {
+          left: linkRect.left - navRect.left,
+          width: linkRect.width,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      }
+    }
+  }, [activeSection]);
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
     const section = document.getElementById(sectionId);
@@ -57,7 +83,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       {/* Desktop Navigation */}
-      <div className="nav-links">
+      <div className="nav-links" ref={navLinksRef}>
         <a
           href="#home"
           className={activeSection === 'home' ? 'active' : ''}
@@ -86,6 +112,8 @@ const Navbar: React.FC = () => {
         >
           Contact
         </a>
+        {/* Animated underline indicator */}
+        <div className="nav-indicator" ref={indicatorRef}></div>
       </div>
 
       {/* Mobile Menu Button */}

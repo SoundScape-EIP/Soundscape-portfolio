@@ -121,3 +121,34 @@
     display: flex;
   }
 }
+
+
+/* Add this to your existing Navbar.css file */
+
+.nav-links {
+  position: relative;
+  /* Keep your existing styles for nav-links */
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: -2px;
+  height: 2px;
+  background-color: white; /* Replace with your preferred color */
+  transition: left 0.3s ease, width 0.3s ease;
+  pointer-events: none; /* Ensures the indicator doesn't interfere with clicks */
+}
+
+/* You may need to adjust these styles to match your existing design */
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+/* Remove any existing underline styles from active links if they conflict */
+.nav-links a.active {
+  /* Keep other active styles but remove any underlines */
+  text-decoration: none;
+}
