@@ -18,18 +18,18 @@ html {
   padding: 2rem;
 }
 
-/* #home {
-  background-color: #000000;
-} */
-
-#events {
+#home {
   background-color: #121212;
 }
 
-#shop {
+#events {
   background-color: #1a1a1a;
 }
 
-#contact {
+#shop {
   background-color: #212121;
+}
+
+#contact {
+  background-color: #2a2a2a;
 }
