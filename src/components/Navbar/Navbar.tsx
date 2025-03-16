@@ -80,6 +80,13 @@ const Navbar: React.FC = () => {
           Home
         </a>
         <a
+          href="#about" 
+          className={activeSection === 'about' ? 'active' : ''}
+          onClick={(e) => handleNavClick(e, 'about')}
+        >
+          About
+        </a>
+        <a
           href="#events" 
           className={activeSection === 'events' ? 'active' : ''}
           onClick={(e) => handleNavClick(e, 'events')}
@@ -87,34 +94,15 @@ const Navbar: React.FC = () => {
           Events
         </a>
         <a 
-          href="#shop" 
-          className={activeSection === 'shop' ? 'active' : ''}
-          onClick={(e) => handleNavClick(e, 'shop')}
-        >
-          Shop
-        </a>
-        <a 
           href="#contact" 
           className={activeSection === 'contact' ? 'active' : ''}
           onClick={(e) => handleNavClick(e, 'contact')}
         >
-          Contact
+          Waitlist
         </a>
         {/* Animated underline indicator */}
         <div className="nav-indicator" ref={indicatorRef}></div>
       </div>
-
-      {/* Mobile Menu Button */}
-      <button
-        className={`hamburger-btn ${isMenuOpen ? 'active' : ''}`}
-        aria-label="Menu"
-        aria-expanded={isMenuOpen}
-        onClick={toggleMenu}
-      >
-        <span className="hamburger-line"></span>
-        <span className="hamburger-line"></span>
-        <span className="hamburger-line"></span>
-      </button>
 
       {/* Mobile Menu Overlay */}
       <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
@@ -127,6 +115,13 @@ const Navbar: React.FC = () => {
             Home
           </a>
           <a
+            href="#about"
+            className={activeSection === 'about' ? 'active' : ''}
+            onClick={(e) => handleNavClick(e, 'about')}
+          >
+            About
+          </a>
+          <a
             href="#events"
             className={activeSection === 'events' ? 'active' : ''}
             onClick={(e) => handleNavClick(e, 'events')}
@@ -134,18 +129,11 @@ const Navbar: React.FC = () => {
             Events
           </a>
           <a
-            href="#shop"
-            className={activeSection === 'shop' ? 'active' : ''}
-            onClick={(e) => handleNavClick(e, 'shop')}
-          >
-            Shop
-          </a>
-          <a
             href="#contact"
             className={activeSection === 'contact' ? 'active' : ''}
             onClick={(e) => handleNavClick(e, 'contact')}
           >
-            Contact
+            Waitlist
           </a>
         </div>
       </div>

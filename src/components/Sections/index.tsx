@@ -1,4 +1,4 @@
 export { default as HomeSection } from './HomeSection';
+export { default as AboutSection } from './AboutSection';
 export { default as EventsSection } from './EventsSection';
-export { default as ShopSection } from './ShopSection';
-export { default as ContactSection } from './ContactSection';
+export { default as WaitlisttSection } from './WaitlisttSection';
