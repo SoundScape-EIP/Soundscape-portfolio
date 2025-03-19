@@ -81,7 +81,26 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Update the waitlist button styles to match the home section button */
+/* Replace the existing waitlist button styles with this minimal version */
+/* Update the minimal button styles */
+.minimal-button {
+  padding: 12px 40px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.minimal-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: white;
+}
+
 .waitlist-button {
   padding: 15px 25px;
   border-radius: 8px;
@@ -152,4 +171,75 @@
 .contact-link:hover {
   color: white;
   text-decoration: underline;
+}
+
+
+/* About Section Styles */
+/* Full-height sections for about content */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevent content from spilling out during animations */
+  position: relative;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+}
+
+.about-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  opacity: 0; /* Start invisible for animation */
+  transform: translateY(50px); /* Start slightly below for animation */
+}
+
+.about-text-container h2 {
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: 200;
+  color: var(--text-gray);
+  max-width: 900px;
+}
+
+/* Parallax animation classes */
+.parallax-text {
+  will-change: transform, opacity;
+}
+
+@media (max-width: 768px) {
+  .about-text-container h2 {
+    font-size: 1.6rem;
+  }
+}
+.about-text {
+  margin-top: 40px;
+}
+
+.about-lead {
+  font-size: 1.5rem;
+  color: var(--purple);
+  margin-bottom: 40px;
+}
+
+.about-item {
+  margin-bottom: 30px;
+  color: var(--text-gray);
+}
+
+@media (max-width: 768px) {
+  .about-lead {
+    font-size: 1.3rem;
+  }
+
+  .about-details p {
+    font-size: 1rem;
+  }
 }

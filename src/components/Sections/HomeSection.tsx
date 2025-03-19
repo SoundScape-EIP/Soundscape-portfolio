@@ -36,11 +36,11 @@ const HomeSection: React.FC = () => {
       
       {/* Scroll indicator arrow */}
       <div className="scroll-arrow-container" ref={scrollArrowRef}>
-        <div className="scroll-arrow">
+        {/* <div className="scroll-arrow">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </div> */}
         <p className="scroll-text">Scroll down</p>
       </div>
     </section>
