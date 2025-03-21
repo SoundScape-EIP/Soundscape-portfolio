@@ -63,7 +63,7 @@ const AboutSection: React.FC = () => {
               </h2>
             </div>
             <div className="about-image-container">
-              {/* Image will be added here */}
+              <img src="/pics/1.JPG" alt="Community-driven music platform" className="about-image" />
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ const AboutSection: React.FC = () => {
               </h2>
             </div>
             <div className="about-image-container">
-              {/* Image will be added here */}
+              <img src="/pics/2.JPG" alt="Geolocation music discovery" className="about-image" />
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@ const AboutSection: React.FC = () => {
               </h2>
             </div>
             <div className="about-image-container">
-              {/* Image will be added here */}
+              <img src="/pics/3.JPG" alt="Human connection through music" className="about-image" />
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@ const AboutSection: React.FC = () => {
               </h2>
             </div>
             <div className="about-image-container">
-              {/* Image will be added here */}
+              <img src="/pics/4.JPG" alt="Musical discovery and community" className="about-image" />
             </div>
           </div>
         </div>
