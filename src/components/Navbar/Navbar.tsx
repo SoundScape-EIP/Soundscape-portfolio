@@ -12,15 +12,35 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('section');
       let current = '';
+      let aboutSectionFound = false;
 
+      // Find the section closest to the top of the viewport
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 60) {
-          current = section.getAttribute('id');
+        const scrollPosition = window.scrollY;
+        const sectionId = section.getAttribute('id') || '';
+        
+        // Special handling for about section and its subsections
+        if (sectionId === 'about' || sectionId.startsWith('about-')) {
+          if (scrollPosition >= sectionTop - 100 && 
+              scrollPosition < sectionTop + sectionHeight - 60) {
+            current = 'about';
+            aboutSectionFound = true;
+          }
+        } 
+        // Normal handling for other sections
+        else if (!aboutSectionFound && 
+                scrollPosition >= sectionTop - 60 && 
+                scrollPosition < sectionTop + sectionHeight - 60) {
+          if (sectionId) {
+            current = sectionId;
+          }
         }
       });
-      if (current) {
+      
+      // Only update if we found a valid section
+      if (current && current !== activeSection) {
         setActiveSection(current);
       }
     };
@@ -32,7 +52,7 @@ const Navbar: React.FC = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [activeSection]);
 
 
   // Add effect for the underline animation
@@ -62,10 +82,6 @@ const Navbar: React.FC = () => {
       setActiveSection(sectionId);
       setIsMenuOpen(false); // Close mobile menu when a link is clicked
     }
-  };
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
