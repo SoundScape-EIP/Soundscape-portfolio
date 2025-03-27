@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
         const sectionHeight = section.clientHeight;
         const scrollPosition = window.scrollY;
         const sectionId = section.getAttribute('id') || '';
-        
+
         // Special handling for about section and its subsections
         if (sectionId === 'about' || sectionId.startsWith('about-')) {
           if (scrollPosition >= sectionTop - 100 && 
