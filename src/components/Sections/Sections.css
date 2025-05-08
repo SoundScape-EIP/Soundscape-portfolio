@@ -184,6 +184,8 @@
 }
 
 .about-content {
+  display: flex;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
@@ -191,7 +193,19 @@
   width: 100%;
 }
 
+.image-container {
+  flex: 1;
+
+  margin-right: 20px;
+}
+
+.section-image {
+  width: 100%;
+  height: auto;
+}
+
 .about-text-container {
+  flex: 2;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
@@ -233,6 +247,14 @@
     font-size: 1.05rem;
     line-height: 1.6;
   }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .image-container {
+    margin: 20px 0 0 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -262,4 +284,15 @@
 /* Optional: style for error messages */
 .waitlist-message.error { /* You would need to add this class dynamically in the JSX if needed */
   color: red;
+}
+
+/* New class to reverse the order of image and text */
+.about-content.reverse {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .about-content.reverse {
+    flex-direction: column-reverse;
+  }
 }

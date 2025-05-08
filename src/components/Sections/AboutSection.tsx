@@ -6,6 +6,9 @@ const AboutSection: React.FC = () => {
     <>
       <section id="about" className="section">
         <div className="about-content">
+          <div className="image-container">
+            <img src="/img/img1.jpg" alt="About Soundscape" className="section-image" />
+          </div>
           <div className="about-text-container">
             <h2>
               Soundscape: Your Geolocated Music App
@@ -18,7 +21,10 @@ const AboutSection: React.FC = () => {
       </section>
 
       <section id="about-features" className="section">
-        <div className="about-content">
+        <div className="about-content reverse">
+          <div className="image-container">
+            <img src="/img/img2.jpg" alt="Key Features" className="section-image" />
+          </div>
           <div className="about-text-container">
             <h2>Key Features: Events, Collection & Community</h2>
             <p>
@@ -30,6 +36,9 @@ const AboutSection: React.FC = () => {
 
       <section id="about-community" className="section">
         <div className="about-content">
+          <div className="image-container">
+            <img src="/img/img3.jpeg" alt="Interactive Exchange" className="section-image" />
+          </div>
           <div className="about-text-container">
             <h2>Interactive Exchange & Discovery</h2>
             <p>
