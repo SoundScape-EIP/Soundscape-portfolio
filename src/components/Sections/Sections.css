@@ -203,6 +203,7 @@
   width: 100%;
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 
 .section-image:hover {
@@ -300,5 +301,27 @@
 @media (max-width: 768px) {
   .about-content.reverse {
     flex-direction: column-reverse;
+  }
+}
+
+/* Parallax scrolling effect */
+@media (prefers-reduced-motion: no-preference) {
+  .parallax {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .parallax img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: translateZ(0);
+    transition: transform 0.3s ease-out;
+  }
+
+  .parallax img.parallax-scroll {
+    transform: translateY(-10%);
   }
 }
