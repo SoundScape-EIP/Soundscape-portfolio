@@ -1,57 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './Sections.css';
 
-const WaitlisttSection: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState(''); // For user feedback
+// Define constants for EmailJS credentials using environment variables
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
-  const handleSubmit = async () => {
+const WaitlisttSection: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setMessage(''); // Clear previous messages
+
     if (!email) {
       setMessage('Please enter your email address.');
       return;
     }
 
-    try {
-      const response = await fetch('/api/addToWaitlist', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setMessage(data.message || 'Successfully joined the waitlist!');
-        setEmail(''); // Clear the input field on success
-      } else {
-        setMessage(data.message || 'Failed to join the waitlist. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting email:', error);
-      setMessage('An unexpected error occurred. Please try again.');
+    if (form.current) {
+      emailjs
+        .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
+          publicKey: PUBLIC_KEY,
+        })
+        .then(
+          () => {
+            setMessage('Successfully joined the waitlist!');
+            setEmail(''); // Clear the input field on success
+          },
+          (error: { text: string }) => {
+            console.error('FAILED...', error.text);
+            setMessage('Failed to join the waitlist. Please try again.');
+          },
+        );
     }
   };
 
   return (
     <section id="contact" className="section">
       <h2>Join the Waitlist</h2>
-      <div className="waitlist-form">
-        <input 
-          type="email" 
-          placeholder="email" 
-          className="waitlist-input" 
+      <form ref={form} onSubmit={sendEmail} className="waitlist-form">
+        <input
+          type="email"
+          name="user_email"
+          placeholder="email"
+          className="waitlist-input"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button className="minimal-button" onClick={handleSubmit}>Join</button>
+        <button type="submit" className="minimal-button">Join</button>
         <div className="contact-container">
           <a href="mailto:contact@soundscape.com" className="contact-link">Contact Us</a>
         </div>
-      </div>
-      {message && <p className="waitlist-message">{message}</p>} {/* Display feedback message */}
+      </form>
+      {message}
     </section>
   );
 };
