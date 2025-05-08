@@ -8,10 +8,11 @@ const AboutSection: React.FC = () => {
         <div className="about-content">
           <div className="about-text-container">
             <h2>
-              Soundscape is revolutionizing the way we discover and share music. 
-              Breaking free from traditional algorithms, we're creating a community-driven 
-              platform that connects people through music in their local neighborhoods.
+              Soundscape: Your Geolocated Music App
             </h2>
+            <p>
+              Soundscape transforms your movements into an immersive musical experience. As you explore different neighborhoods, you'll automatically listen to music associated with those areas, creating a dynamic soundtrack for your environment.
+            </p>
           </div>
         </div>
       </section>
@@ -19,11 +20,10 @@ const AboutSection: React.FC = () => {
       <section id="about-features" className="section">
         <div className="about-content">
           <div className="about-text-container">
-            <h2>
-              Using geolocation, we enable users to explore, collect, and share music 
-              within their communities. Discover new tracks as you explore different 
-              neighborhoods, collect musical trophies, and trade with other music enthusiasts.
-            </h2>
+            <h2>Key Features: Events, Collection & Community</h2>
+            <p>
+              Dive into geolocated music with automatic playback tied to visited neighborhoods. Discover and create timely musical events (a premium feature for users!). Collect tracks like trophies and vote to associate your favorite songs with specific areas.
+            </p>
           </div>
         </div>
       </section>
@@ -31,11 +31,10 @@ const AboutSection: React.FC = () => {
       <section id="about-community" className="section">
         <div className="about-content">
           <div className="about-text-container">
-            <h2>
-              We believe in the power of human connection. Our platform encourages real 
-              interactions, allowing users to shape the musical landscape of their areas 
-              through suggestions and votes.
-            </h2>
+            <h2>Interactive Exchange & Discovery</h2>
+            <p>
+              Exchange music with fellow users and explore their tastes through public profiles. Our interactive map lets you visualize musical zones and real-time events, with intuitive navigation to enhance your discovery.
+            </p>
           </div>
         </div>
       </section>
@@ -43,11 +42,10 @@ const AboutSection: React.FC = () => {
       <section id="about-audience" className="section">
         <div className="about-content">
           <div className="about-text-container">
-            <h2>
-              Whether you're a music lover seeking new sounds, someone looking to connect 
-              with others, or an artist wanting to reach new audiences, Soundscape is 
-              your platform for musical discovery and community.
-            </h2>
+            <h2>User Roles & Technology</h2>
+            <p>
+              Standard users enjoy core features like listening, collecting, and voting. Premium users can create events, access exclusive content, and enjoy an ad-free experience. Ambassadors act as playlist curators with early access to new features. Our technology focuses on precise geolocation for music triggering, real-time sync for votes and exchanges, and optimized performance for seamless musical transitions.
+            </p>
           </div>
         </div>
       </section>
