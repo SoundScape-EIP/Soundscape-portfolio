@@ -226,3 +226,18 @@
     padding: 0 20px;
   }
 }
+
+.waitlist-message {
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+/* Optional: style for success messages */
+.waitlist-message.success { /* You would need to add this class dynamically in the JSX if needed */
+  color: green;
+}
+
+/* Optional: style for error messages */
+.waitlist-message.error { /* You would need to add this class dynamically in the JSX if needed */
+  color: red;
+}
