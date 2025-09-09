@@ -54,10 +54,10 @@ const AboutSection: React.FC = () => {
           <div className="text-wrapper">
             <div className="about-text-container" ref={setRef(0)}>
               <h2>
-                Soundscape: Your Geolocated Music App
+                Soundscape : Votre Application Musicale Géolocalisée
               </h2>
               <p>
-                Soundscape transforms your movements into an immersive musical experience. As you explore different neighborhoods, you'll automatically listen to music associated with those areas, creating a dynamic soundtrack for your environment.
+                Soundscape transforme vos déplacements en une expérience musicale immersive. En explorant différents quartiers, vous écouterez automatiquement la musique associée à ces zones, créant une bande sonore dynamique pour votre environnement.
               </p>
             </div>
           </div>
@@ -73,9 +73,9 @@ const AboutSection: React.FC = () => {
           </div>
           <div className="text-wrapper">
             <div className="about-text-container" ref={setRef(1)}>
-              <h2>Key Features: Events, Collection & Community</h2>
+              <h2>Fonctionnalités Clés : Événements, Collection & Communauté</h2>
               <p>
-                Dive into geolocated music with automatic playback tied to visited neighborhoods. Discover and create timely musical events (a premium feature for users!). Collect tracks like trophies and vote to associate your favorite songs with specific areas.
+                Plongez dans la musique géolocalisée avec une lecture automatique liée aux quartiers visités. Découvrez et créez des événements musicaux opportuns (une fonctionnalité premium pour les utilisateurs !). Collectionnez des pistes comme des trophées et votez pour associer vos chansons préférées à des zones spécifiques.
               </p>
             </div>
           </div>
@@ -91,9 +91,9 @@ const AboutSection: React.FC = () => {
           </div>
           <div className="text-wrapper">
             <div className="about-text-container" ref={setRef(2)}>
-              <h2>Interactive Exchange & Discovery</h2>
+              <h2>Échange Interactif & Découverte</h2>
               <p>
-                Exchange music with fellow users and explore their tastes through public profiles. Our interactive map lets you visualize musical zones and real-time events, with intuitive navigation to enhance your discovery.
+                Échangez de la musique avec d'autres utilisateurs et explorez leurs goûts à travers des profils publics. Notre carte interactive vous permet de visualiser les zones musicales et les événements en temps réel, avec une navigation intuitive pour améliorer votre découverte.
               </p>
             </div>
           </div>
@@ -103,9 +103,9 @@ const AboutSection: React.FC = () => {
       <section id="about-audience" className="section">
         <div className="about-content">
             <div className="about-text-container" ref={setRef(3)}>
-              <h2>User Roles & Technology</h2>
+              <h2>Rôles Utilisateur & Technologie</h2>
               <p>
-                Standard users enjoy core features like listening, collecting, and voting. Premium users can create events, access exclusive content, and enjoy an ad-free experience. Ambassadors act as playlist curators with early access to new features. Our technology focuses on precise geolocation for music triggering, real-time sync for votes and exchanges, and optimized performance for seamless musical transitions.
+                Les utilisateurs standard profitent des fonctionnalités principales comme l'écoute, la collection et le vote. Les utilisateurs premium peuvent créer des événements, accéder à du contenu exclusif et profiter d'une expérience sans publicité. Les ambassadeurs agissent comme des conservateurs de playlists avec un accès anticipé aux nouvelles fonctionnalités. Notre technologie se concentre sur la géolocalisation précise pour le déclenchement musical, la synchronisation en temps réel pour les votes et échanges, et des performances optimisées pour des transitions musicales fluides.
               </p>
             </div>
         </div>

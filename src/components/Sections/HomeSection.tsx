@@ -99,7 +99,7 @@ const HomeSection: React.FC = () => {
           </div>
           <h1 ref={titleRef}>soundscape.</h1>
           <p className="hero-description purple-text" ref={descriptionRef}>
-            Find, join, or organize music events effortlessly. Connect, live and enjoy.
+            Trouvez, rejoignez ou organisez des événements musicaux sans effort. Connectez-vous, vivez et profitez.
           </p>
           {/* <button className="cta-button">Join the waitlist</button> */}
         </div>
@@ -112,7 +112,7 @@ const HomeSection: React.FC = () => {
           <span></span>
           <span></span>
         </div> */}
-        <p className="scroll-text">Scroll down</p>
+        <p className="scroll-text">Faites défiler vers le bas</p>
       </div>
     </section>
   );

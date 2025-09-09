@@ -59,8 +59,8 @@ const EventsSection: React.FC = () => {
 
   return (
     <section id="events" className="section">
-      <h1 ref={titleRef}>Events</h1>
-      <p ref={subtitleRef}>Check out our upcoming events</p>
+      <h1 ref={titleRef}>Événements</h1>
+      <p ref={subtitleRef}>Découvrez nos prochains événements</p>
       {/* Add your events content here */}
     </section>
   );

@@ -93,28 +93,28 @@ const Navbar: React.FC = () => {
           className={activeSection === 'home' ? 'active' : ''}
           onClick={(e) => handleNavClick(e, 'home')}
         >
-          Home
+          Accueil
         </a>
         <a
           href="#about" 
           className={activeSection === 'about' ? 'active' : ''}
           onClick={(e) => handleNavClick(e, 'about')}
         >
-          About
+          À propos
         </a>
         <a
           href="#events" 
           className={activeSection === 'events' ? 'active' : ''}
           onClick={(e) => handleNavClick(e, 'events')}
         >
-          Events
+          Événements
         </a>
         <a 
           href="#contact" 
           className={activeSection === 'contact' ? 'active' : ''}
           onClick={(e) => handleNavClick(e, 'contact')}
         >
-          Waitlist
+          Liste d'attente
         </a>
         {/* Animated underline indicator */}
         <div className="nav-indicator" ref={indicatorRef}></div>
@@ -128,28 +128,28 @@ const Navbar: React.FC = () => {
             className={activeSection === 'home' ? 'active' : ''}
             onClick={(e) => handleNavClick(e, 'home')}
           >
-            Home
+            Accueil
           </a>
           <a
             href="#about"
             className={activeSection === 'about' ? 'active' : ''}
             onClick={(e) => handleNavClick(e, 'about')}
           >
-            About
+            À propos
           </a>
           <a
             href="#events"
             className={activeSection === 'events' ? 'active' : ''}
             onClick={(e) => handleNavClick(e, 'events')}
           >
-            Events
+            Événements
           </a>
           <a
             href="#contact"
             className={activeSection === 'contact' ? 'active' : ''}
             onClick={(e) => handleNavClick(e, 'contact')}
           >
-            Waitlist
+            Liste d'attente
           </a>
         </div>
       </div>

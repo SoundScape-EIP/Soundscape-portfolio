@@ -33,7 +33,7 @@ const WaitlistSection: React.FC = () => {
     setMessage('');
 
     if (!email) {
-      setMessage('Please enter your email address.');
+      setMessage('Veuillez saisir votre adresse e-mail.');
       return;
     }
 
@@ -41,11 +41,11 @@ const WaitlistSection: React.FC = () => {
 
     try {
       await joinWaitlist(email);
-      setMessage('Successfully joined the waitlist!');
+      setMessage('Inscription à la liste d\'attente réussie !');
       setEmail('');
     } catch (error) {
       console.error('Error:', error);
-      setMessage('Failed to join. Please try again.');
+      setMessage('Échec de l\'inscription. Veuillez réessayer.');
     } finally {
       setIsLoading(false);
     }
@@ -53,12 +53,12 @@ const WaitlistSection: React.FC = () => {
 
   return (
     <section id="contact" className="section">
-      <h2>Join the Waitlist</h2>
+      <h2>Rejoignez la Liste d'Attente</h2>
       <form onSubmit={handleSubmit} className="waitlist-form">
         <input
           type="email"
           name="user_email"
-          placeholder="Your email"
+          placeholder="Votre e-mail"
           className="waitlist-input"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -69,14 +69,14 @@ const WaitlistSection: React.FC = () => {
           className="minimal-button"
           disabled={isLoading}
         >
-          {isLoading ? 'Joining...' : 'Join'}
+          {isLoading ? 'Inscription...' : 'Rejoindre'}
         </button>
         <div className="contact-container">
-          <a href="mailto:contact@soundscape.com" className="contact-link">Contact us</a>
+          <a href="mailto:contact@soundscape.com" className="contact-link">Nous contacter</a>
         </div>
       </form>
       {message && (
-        <div className={`waitlist-message ${message.includes('Successfully') ? 'success' : 'error'}`}>
+        <div className={`waitlist-message ${message.includes('réussie') ? 'success' : 'error'}`}>
           {message}
         </div>
       )}
