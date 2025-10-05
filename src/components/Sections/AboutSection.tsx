@@ -2,6 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import './Sections.css';
+import img1 from '/img/img1.jpg?url';
+import img2 from '/img/img2.jpg?url';
+import img3 from '/img/img3.jpeg?url';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,7 +51,7 @@ const AboutSection: React.FC = () => {
         <div className="about-content">
           <div className="image-wrapper">
             <div className="image-container">
-              <img src="/img/img1.jpg" alt="About Soundscape" className="section-image" />
+              <img src={img1} alt="About Soundscape" className="section-image" />
             </div>
           </div>
           <div className="text-wrapper">
@@ -68,7 +71,7 @@ const AboutSection: React.FC = () => {
         <div className="about-content reverse">
           <div className="image-wrapper">
             <div className="image-container">
-              <img src="/img/img2.jpg" alt="Key Features" className="section-image" />
+              <img src={img2} alt="Key Features" className="section-image" />
             </div>
           </div>
           <div className="text-wrapper">
@@ -86,7 +89,7 @@ const AboutSection: React.FC = () => {
         <div className="about-content">
           <div className="image-wrapper">
             <div className="image-container">
-              <img src="/img/img3.jpeg" alt="Interactive Exchange" className="section-image" />
+              <img src={img3} alt="Interactive Exchange" className="section-image" />
             </div>
           </div>
           <div className="text-wrapper">

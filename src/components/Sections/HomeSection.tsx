@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
 import './Sections.css'; // Import the CSS file
+import logo from '/logo.png?url';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,7 +96,7 @@ const HomeSection: React.FC = () => {
       <div className="hero-content">
         <div className="content-wrapper" ref={contentRef}>
           <div className="logo-container" ref={logoRef}>
-            <img src="/logo.png" alt="Soundscape Logo" className="hero-logo" />
+            <img src={logo} alt="Soundscape Logo" className="hero-logo" />
           </div>
           <h1 ref={titleRef}>soundscape.</h1>
           <p className="hero-description purple-text" ref={descriptionRef}>
